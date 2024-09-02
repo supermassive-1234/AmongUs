@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Room</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="login-container">
+    <h2>Login</h2>
+    <button id="google-signin">Sign in with Google</button>
+    <button id="github-signin">Sign in with GitHub</button>
+    <button id="email-signin">Sign in with Email</button>
+    <button id="phone-signin">Sign in with Phone Number</button>
+    <!-- Add this in the login container or anywhere on the page -->
+<div id="recaptcha-container"></div>
+
+</div>
+  <div id="chat-container" style="display: none;">
+
+    <div class="messages" id="messages-container">
+    
+    </div>
+    <div id="message-input">
+    <input type="text" class="emmet" placeholder="Message here..." id="message-text"/>
+    <button type="submit" class="submitbtn" id="send-message">Send</button>
+</div>
+  </div>
+
+  <div id="profile-container" style="display: none;">
+    <div id="profile-info">
+      <img src="" alt="Profile Picture" id="profile-pic-display">
+      <spa id="username-display"></spa>
+    </div>
+    <button id="edit-profile">Edit Profile</button>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+  
+  <script src="app.js"></script>
+  <style>
+ body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+#chat-container{
+   
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #00b11b;
+}
+
+#messages-container {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #f0f0f0;
+    color: #000000;
+    border-radius: 20px;
+}
+
+.emmet {
+    width: 160px;
+    height: 10px;
+    padding: 10px;
+    margin-right: 5px;
+    font-family: "Poppins",sans-serif;
+    border-radius: 20px;
+    border: none;
+}
+
+.submitbtn {
+    width: 100px;
+    height: 30px;
+    background: #00590d;
+    font-weight: 400;
+    border-radius: 20px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    margin-left: 5px;
+}
+.submitbtn:hover{
+  background: #fff;
+  color:#00590d;
+  font-weight: 700;
+}
+
+.token1{
+  background-color: #00b11b;
+  border: 2px solid #fff;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+
+  </style>
+</body>
+</html>
